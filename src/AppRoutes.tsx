@@ -1,15 +1,13 @@
 import { Navigate, Route, Routes } from "react-router-dom";
+import Layout from "./layouts/layout";
+import HomePage from "./pages/HomePage";
 
 const AppRoutes = () => {
     return (
       <Routes>
         <Route
           path="/"
-          element={
-            <>
-              <span>HOME page</span>
-            </>
-          }
+          element={<Layout showHero><HomePage /></Layout>}
         />
         <Route
           path="/user-profile"
@@ -19,12 +17,7 @@ const AppRoutes = () => {
             </>
           }
         />
-        <Route
-          path="*"
-          element={
-          <Navigate to={"/"}/>
-          }
-        />
+        <Route path="*" element={<Navigate to={"/"} />} />
       </Routes>
     );
 } 
